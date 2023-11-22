@@ -1,0 +1,73 @@
+
+h1, h5 {
+    font-family: 'Montserrat', sans-serif;
+  }
+  
+
+.content {
+    text-align: center;
+    margin-top: 20px; /* Ajusta este valor según sea necesario */
+    padding: 20px;
+  }
+  
+
+.table-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  table {
+    border-collapse: collapse;
+    width: 80%;
+    max-width: 800px;
+    margin: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  }
+  
+  th, td {
+    padding: 12px 15px;
+    text-align: center;
+  }
+  
+  th {
+    position: sticky;
+    top: 0;
+    background-color: #f2f2f2;
+  }
+  
+  tr:nth-child(even) {
+    background-color: #f9f9f9;
+  }
+  
+  tr:hover {
+    background-color: #e9e9e9;
+  }
+  
+  #searchInput {
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 16px;
+    margin-bottom: 10px;
+    margin-right: 585px;
+  }
+
+
+/* Estilos para el enlace 'Editar' */
+.editar-link {
+  color: #336699; /* Cambia el color del texto */
+  text-decoration: none; /* Quita la subrayado por defecto */
+  border: 2px solid #336699; /* Agrega un borde sólido de 2px */
+  padding: 5px 10px; /* Ajusta el espacio dentro del borde */
+  border-radius: 5px; /* Agrega bordes redondeados */
+  display: inline-block; /* Permite que el ancho y alto se apliquen correctamente */
+}
+
+/* Estilos para el enlace cuando se coloca el cursor encima */
+.editar-link:hover {
+  background-color: #336699; /* Cambia el color de fondo al pasar el cursor */
+  color: white; /* Cambia el color del texto al pasar el cursor */
+  /* Otros estilos al pasar el cursor por encima */
+}
+

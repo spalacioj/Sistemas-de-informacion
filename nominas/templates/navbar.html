@@ -1,0 +1,36 @@
+{% load static %} 
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'css/navbar.css' %}" />
+    <title>navbar</title>
+</head>
+<body>
+    <nav class="mi-navbar">
+        <div class="mi-img">
+            <a href="/">
+                <img src="{% static 'img/logo-funat.png' %}" alt="logo">
+            </a>
+        </div>
+        <ul>
+            {% if user.is_authenticated %}
+            <li>
+                <a href="{% url 'logout' %}">Cerrar sesion</a>
+            </li>
+            <li>
+                <a href="{% url 'signup' %}">Registrar usuario</a>
+            </li>
+            {% else %}
+            {% endif %}
+            <li>
+                <a href="#">Productos</a>
+            </li>
+            <li>
+                <a href="#">Nosotros</a>
+            </li>
+        </ul>
+    </nav>
+</body>
+</html>

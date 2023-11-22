@@ -1,0 +1,60 @@
+{% extends 'base.html' %} {% load static %} 
+
+{% block title %} Inicio {% endblock %}
+
+{% block styles %}
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="{% static 'css/nominas.css' %}" />
+{% endblock styles %}
+
+{% block content %}
+
+    <div class="content">
+        <h1>Bienvenido a la seccion de nominas</h1><br>
+        <h5>Aqui encontraras informacion de empleados y manejar las horas trajadas de cada uno</h5><br>
+        <input type="text" id="searchInput" placeholder="Buscar por nombre...">
+        <div class="table-container">
+            <table>
+                <thead>
+                    <tr>
+                      <th>ID</th>
+                      <th>Nombre</th>
+                      <th>Numero</th>
+                      <th>Horas trabajadas</th>
+                      <th>Editar</th>  
+                    </tr>
+                </thead>
+                <tbody>
+                    {% if empleados %} {% for empleado in empleados %}
+                    <tr>
+                        <td>{{ empleado.id }}</td>
+                        <td>{{ empleado.Nombre }}</td>
+                        <td>{{ empleado.Numero }}</td>
+                        <td>{{ empleado.Horas }}</td>
+                        <td><a href="{% url 'empleado' idEmpleado=empleado.id %}" class="editar-link">Editar</a></td>
+                    </tr>
+                    {% endfor %} {% else %}
+                    <tr>
+                      <td colspan="4">No hay empleados</td>
+                    </tr>
+                    {% endif %}
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+{% endblock content %}
+
+{% block scripts %}
+    <script>
+        $(document).ready(function() {
+            $("#searchInput").on("keyup", function() {
+                var value = $(this).val().toLowerCase();
+                $("table tbody tr").each(function() {
+                    var rowName = $(this).find("td:eq(1)").text().toLowerCase(); 
+                    $(this).toggle(rowName.indexOf(value) > -1);
+                });
+            });
+        });        
+    </script>
+{% endblock scripts %}

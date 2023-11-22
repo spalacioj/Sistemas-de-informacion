@@ -1,0 +1,27 @@
+{% extends 'base.html' %} {% load static %}
+{% block title %} Edicion {% endblock %}
+{% block styles %}
+    <link rel="stylesheet" href="{% static 'css/editarEmpleado.css' %}" />
+{% endblock styles %}
+
+{% block content %}
+<div class="container">
+    <h1>Editando informacion de {{ empleado.Nombre }}</h1>
+
+    <form method="post" class="formulario">
+        {% csrf_token %}
+        <label>Nombre:</label>
+        <input type="text" id="nombre" name="nombre" value="{{ empleado.Nombre }}" required><br><br>
+
+        <label>Número:</label>
+        <input type="number" id="numero" name="numero" value="{{ empleado.Numero }}" required><br><br>
+
+        <label>Horas Trabajadas:</label>
+        <input type="number" id="horas" name="horas" value="{{ empleado.Horas }}" required><br><br>
+
+        <input type="submit" value="Guardar Cambios">
+    </form>
+
+    <a href="{% url 'index' %}" class="volver">Volver al Inicio</a>
+</div>
+{% endblock content %}

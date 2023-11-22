@@ -1,0 +1,52 @@
+
+body {
+    font-family: 'Montserrat', sans-serif; /* Utiliza la fuente Montserrat para todo el cuerpo de la página */
+}
+.mi-navbar {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center; /* Añadido para centrar verticalmente los elementos */
+    width: 100%;
+    background-color: #fff; /* Cambiado el color de fondo a azul */
+    border-bottom: 2px solid #333; /* Cambiado el color del borde inferior a gris */
+    padding: 10px 0; /* Espaciado interior ajustado */
+}
+
+.mi-img {
+    padding: 10px; /* Espaciado interior ajustado */
+}
+
+.mi-img img {
+    width: 125px;
+    margin-left: 90px;
+    
+}
+
+
+
+.mi-navbar ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+.mi-navbar ul > li {
+    display: inline-block;
+    margin-left: 15px; /* Espacio reducido entre elementos del menú */
+}
+
+.mi-navbar li a {
+    display: block;
+    text-decoration: none;
+    color: #000000; /* Color del texto en el enlace */
+    font-weight: 500; /* Cambiado el peso de la fuente a 500 */
+    padding: 5px 10px; /* Espaciado interior del enlace */
+    border-radius: 5px; /* Añadido un radio de borde para un aspecto más elegante */
+    
+}
+
+/* Cambiar el color del enlace al pasar el mouse sobre él */
+.mi-navbar li a:hover {
+    color: #97B74F; /* Nuevo color de fondo al pasar el mouse */
+}
